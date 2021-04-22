@@ -26,12 +26,12 @@ router.post('/responseData', (req, res, next)=> {
         parsedData = parsedData.split('&');
 
         // Get input1 and input2 and concatenate them.
-        concatText = parsedData[0].split('=')[1].split('+').join(' ') + parsedData[1].split('=')[1].split('+').join(' ');
+        concatText = (parsedData[0].split('=')[1].split('+').join(' ') + parsedData[1].split('=')[1].split('+').join(' ')).trim();
 
         // Render output page.
         res.render('pages/prove01Output',{
             path: '/prove01Output',
-            // If nothing was entered, display a title indicating that.
+            // If nothing (or only whitespace) was entered, display a title indicating nothing was entered.
             title: (concatText) === '' ? 'Nothing Entered' : 'Your Concatenated Text',
             concatenatedText: concatText
         });
