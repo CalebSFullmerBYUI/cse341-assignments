@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../includes/header.ejs %>
+    </head>
+
+    <body>
+        <% include ../includes/nav.ejs %>
+        <div class="jumbotron text-center">
+            <h1>Enter Two Things</h1>
+            <div class="prove01TextColor">
+                <p>Please enter two strings to concatenate.</p>
+                <form action="./prove01/responseData" method="POST">
+                    <input type="text" name="input1">
+                    <input type="text" name="input2">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
