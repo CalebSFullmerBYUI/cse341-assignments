@@ -9,7 +9,20 @@
 <div class="jumbotron text-center">
   <div class="container">
     <h1><%= title %></h1>
-    <p>This is the placeholder for Team Activity 02</p>
+    <p>
+    <% let count = 0; for (user of usernames) {%>
+      <%= user %><% if (count != usernames.length - 1) {%>, <%}%>
+    <% count += 1; }%>
+    </p>
+    <form style="color: black;" action="./ta02/addUser" method="POST">
+      <input type="text" name="newUserName">
+      <button type="submit">Add User</button>
+    </form>
+    <p></p>
+    <form style="color: black;" action="./ta02/removeUser" method="POST">
+      <input type="text" name="newUserName">
+      <button type="submit">Remove User</button>
+    </form>
   </div>
 </div>
 <div class="container">
