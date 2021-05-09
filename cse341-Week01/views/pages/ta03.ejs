@@ -9,7 +9,19 @@
 <div class="jumbotron text-center">
   <div class="container">
     <h1><%= title %></h1>
-    <p>This is the placeholder for Team Activity 03</p>
+    <form action="./ta03/search" method="POST" style="color: black">
+      <input type="text" name="searchInput">
+      <button type="submit">Search</button>
+  </form>
+    <% for (item of objs) {%>
+      <h3><%= item.name %></h3>
+      <img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+      <p><%= item.imageUrl %></p>
+      <p>$<%= item.price %></p>
+      <p><%= item.description %></p>
+      <p>Tags: <%for (tag of item.tags){%>#<%= tag %> <%}%></p>
+      <hr>
+    <%}%>
   </div>
 </div>
 <div class="container">
