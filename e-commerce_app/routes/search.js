@@ -27,7 +27,7 @@ router.post("/request", (req, res, next) => {
         let data = Buffer.concat(incomingData).toString();
 
         console.log("Handled search request.");
-        res.redirect('/');
+        res.redirect('/search');
     });
 });
 
